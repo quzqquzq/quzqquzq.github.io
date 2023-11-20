@@ -305,8 +305,8 @@ function gameLoop(timeStamp) {
             localStorage.setItem('bestTime', totalTime)
         }
         // Must allow in browser in order to work
-        const crashSound = new Audio('sound.ogg')
-        crashSound.play()
+        // const crashSound = new Audio('sound.ogg')
+        // crashSound.play()
         return
     }
 
