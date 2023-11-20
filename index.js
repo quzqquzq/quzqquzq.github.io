@@ -329,8 +329,7 @@ const getTime = (totalElapsedTime) => {
     const minutes = Math.floor(totalElapsedTime / 60000)
     const seconds = Math.floor((totalElapsedTime - minutes * 60000) / 1000)
     const ms = Math.floor((totalElapsedTime - minutes * 60000 - seconds * 1000))
-    const formattedTime = `${minutes}:${seconds}:${ms}`
-    return formattedTime
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:${ms.toString().padStart(3, '0')}`
 }
 
 // The getItem() method of the Storage interface, when passed a key name, will return that key's value, or null if the key does not exist, in the given Storage object
@@ -392,7 +391,7 @@ function gameLoop(timeStamp) {
         c.font = '2em Arial'
         c.fillStyle = 'white'
         // The CanvasRenderingContext2D method fillText(), part of the Canvas 2D API, draws a text string at the specified coordinates, filling the string's characters with the current fillStyle. An optional parameter allows specifying a maximum width for the rendered text, which the user agent  will achieve by condensing the text or by using a lower font size.
-        c.fillText(`Najbolje vrijeme: 0:0:000`, canvas.width - 370, 50)
+        c.fillText(`Najbolje vrijeme: 00:00:000`, canvas.width - 370, 50)
     }
     c.font = '2em Arial'
     c.fillStyle = 'white'
